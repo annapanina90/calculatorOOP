@@ -1,3 +1,7 @@
+//ДЗ 5 калькулятор в стиле ООП
+//ДЗ 7 добавить обработку исключений
+//ДЗ 8 Покрыть Unit тестами
+
 import calculator.Calculator;
 
 import java.io.BufferedReader;
@@ -31,7 +35,9 @@ public class MainClass {
             } catch (IOException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
+
             }
+
 
             calc.setError(false);
             if ("x".equals( key )) {
@@ -62,6 +68,8 @@ public class MainClass {
                 calc.setNumber1( getNumber() );
                 calc.setNumber2( getNumber() );
                 calc.div();
+
+
             } else if ("=".equals( key )) {
                 switch (calc.getOperation()) {
                     case '+':
@@ -75,7 +83,7 @@ public class MainClass {
                 }
             } else {
                 calc.setError( true );
-                System.out.println( "Unsupported command!" );
+                System.out.println( "Неизвестная команда! Повторите ввод!" );
             }
             System.out.println( calc.isError() ? "Error" : "Result: " + calc.getNumber1() );
 
@@ -89,16 +97,27 @@ public class MainClass {
         System.out.println("Input number");
         BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
         double number = 0;
+
         try {
             number = Double.parseDouble(r.readLine().trim());
+
         } catch (NumberFormatException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-
-        return number;
+                return number;
     }
 
-}
+    }
+
+/* } else if ("/".equals( key )){
+                calc.setOperation( '/' );
+                calc.setNumber1( getNumber() );
+                calc.setNumber2( 0 );
+                try {calc.div();}
+                catch (ArithmeticException e){
+                    System.out.println("На ноль делить нельзя");
+                }
+*/
