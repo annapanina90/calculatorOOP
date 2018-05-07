@@ -9,7 +9,7 @@ public class TestCalc {
         calc.setNumber1( 5 );
         calc.setNumber2( 2 );
         calc.minus();
-        Assert.assertEquals(1,1);
+        Assert.assertEquals(3,calc.getNumber1(),0);
         System.out.println("Result minus: " + calc.getNumber1());
     }
     @Test
@@ -18,7 +18,7 @@ public class TestCalc {
         calc.setNumber1( 8 );
         calc.setNumber2( 2 );
         calc.sum();
-        Assert.assertEquals( 4,4 );
+        Assert.assertEquals( 10,calc.getNumber1(),0 );
         System.out.println("Result sum: " + calc.getNumber1());
         }
 
@@ -28,7 +28,7 @@ public class TestCalc {
         calc.setNumber1( 3 );
         calc.setNumber2( 2 );
         calc.multi();
-        Assert.assertEquals( 4,4 );
+        Assert.assertEquals( 6,calc.getNumber1(),0 );
         System.out.println("Result multi: " + calc.getNumber1());
     }
     @Test
@@ -37,7 +37,7 @@ public class TestCalc {
         calc.setNumber1( 4 );
         calc.setNumber2( 2 );
         calc.div();
-        Assert.assertEquals( 1,1 );
+        Assert.assertEquals( 2,calc.getNumber1(),0);
         System.out.println("Result div: " + calc.getNumber1());
     }
     @Test(expected = ArithmeticException.class)
