@@ -40,6 +40,16 @@ public class TestCalc {
         Assert.assertEquals( 2,calc.getNumber1(),0);
         System.out.println("Result div: " + calc.getNumber1());
     }
+    @Test
+    public void testPerc() {
+        Calculator calc = new Calculator();
+        calc.setNumber1(10);
+        calc.setNumber2(30);
+        calc.perc();
+        Assert.assertEquals(3, calc.getNumber1(), 0);
+        System.out.println("Result perc: " + calc.getNumber1());
+    }
+
     @Test(expected = ArithmeticException.class)
     public void testDivWillThrowExceptionWhenDivOnZero() {
         Calculator calc = new Calculator();
