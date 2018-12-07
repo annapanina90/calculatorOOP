@@ -61,5 +61,6 @@ public class Calculator {
         }
 
     }
+    public void perc() {this.setNumber1(this.getNumber1()* getNumber2() / 100);}
 }
 

@@ -47,7 +47,7 @@ public class MainClass {
                 return;
             } else if ("h".equals( key )) {
                 cls();
-                System.out.println( "+\n-\n*\n/\n" );
+                System.out.println( "+\n-\n*\n/\n%\n" );
             } else if ("+".equals( key )) {
                 calc.setOperation( '+' );
                 calc.setNumber1( getNumber() );
@@ -68,6 +68,11 @@ public class MainClass {
                 calc.setNumber1( getNumber() );
                 calc.setNumber2( getNumber() );
                 calc.div();
+            } else if ("%".equals( key )) {
+                calc.setOperation( '%' );
+                calc.setNumber1( getNumber() );
+                calc.setNumber2( getNumber() );
+                calc.perc();
 
 
             } else if ("=".equals( key )) {
@@ -80,6 +85,8 @@ public class MainClass {
                         calc.multi();
                     case '/':
                         calc.div();
+                    case '%':
+                        calc.perc();
                 }
             } else {
                 calc.setError( true );
